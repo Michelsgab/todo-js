@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="resources/img/project_logo.png"
+    />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <title>To-Do JavaScript</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="navbar__logo">To-Do Exercise</h3>
+      <ul class="navbar__links">
+        <a
+          href="https://github.com/Michelsgab"
+          target="_blank"
+          class="navbar__links__a"
+          ><li class="navbar__links__item">
+            <i class="bx bxl-github"></i>Michelsgab
+          </li></a
+        >
+      </ul>
+    </nav>
+    <main class="container">
+      <div class="form">
+        <label for="name" class="form__label">Enter your name:</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Name*"
+          required
+          class="form__input"
+        />
+        <p class="error__message" id="errorName"></p>
+
+        <label for="email" class="form__label">Enter your e-mail:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="E-mail*"
+          required
+          class="form__input"
+        />
+        <p class="error__message" id="errorEmail"></p>
+
+        <label for="profession" class="form__label"
+          >Enter your profession:</label
+        >
+        <input
+          type="text"
+          id="profession"
+          placeholder="Profession*"
+          required
+          class="form__input"
+        />
+        <p class="error__message" id="errorProfession"></p>
+
+        <div class="button__container">
+          <button type="submit" class="button" id="buttonSubmit" onclick="saveData()">
+            <span class="button__content">Save</span>
+          </button>
+          <button type="reset" class="button" onclick="cancel()">
+            <span class="button__content">Cancel</span>
+          </button>
+        </div>
+      </div>
+
+      <table class="content" border="1">
+        <thead class="thead">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Profession</th>
+          <th>Options</th>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </main>
+
+    <script src="resources/js/main.js"></script>
+  </body>
+</html>
