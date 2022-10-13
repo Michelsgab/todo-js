@@ -92,8 +92,31 @@
   background-color: #144f6c;
 }
 
+.cancel__button {
+  position: relative;
+  width: 6rem;
+  border: none;
+  height: 2.4rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  border-radius: 0.4rem;
+  background-color: #ddd;
+  transition: ease-in-out 0.1s;
+}
+
+.cancel__button:hover {
+  transform: scale(1.05);
+  background-color: #7c8488;
+}
+
 .button__content {
   color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.cancel__button__content {
+  color: #123141;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -115,7 +138,7 @@
   bottom: 0;
   margin: auto;
   border: 0.3rem solid transparent;
-  border-top-color: #FFF;
+  border-top-color: #fff;
   border-radius: 50%;
   animation: loading__animation 1s ease-in-out infinite;
 }
@@ -149,7 +172,7 @@
 }
 
 .thead {
-  color: #FFF;
+  color: #fff;
   height: 3rem;
   background-color: #144f68;
 }
@@ -161,9 +184,86 @@
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #EEE;
+  background-color: #eee;
 }
 
 .iconCursor {
   cursor: pointer;
+}
+
+/* MODAL CONFIGURATION */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #474e5d60;
+  padding-top: 3rem;
+}
+
+.modal__content {
+  border-radius: 1.1rem;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid inherit;
+  width: 60%;
+}
+
+.modal__container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  right: 18.4rem;
+  top: 7.7rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #888;
+  transition: ease-in-out 0.2s;
+}
+
+.close:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  color: #0a2635;
+}
+
+.modal__paragraph {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 1.3rem 0;
+}
+
+.clear__modal {
+  margin: 0.8rem 0 0.8rem 34%;
+}
+
+.clear__modal {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.delete__button {
+  position: relative;
+  width: 6rem;
+  border: none;
+  height: 2.4rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  border-radius: 0.4rem;
+  background-color: #991111;
+  transition: ease-in-out 0.1s;
+}
+
+.delete__button:hover {
+  transform: scale(1.05);
+  background-color: #992233;
 }

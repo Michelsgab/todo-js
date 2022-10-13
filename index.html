@@ -64,12 +64,43 @@
         />
         <p class="error__message" id="errorProfession"></p>
 
+        <div class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div class="modal__content">
+            <div class="modal__container">
+              <h1 class="modal__title">Delete Product</h1>
+              <p class="modal__paragraph">
+                Do you really want to delete ID 12?
+              </p>
+
+              <div class="clear__modal">
+                <button class="cancel__button">
+                  <span class="cancel__button__content" onclick="closeModal()"
+                    >Cancel</span
+                  >
+                </button>
+                <button
+                  class="delete__button"
+                  id="buttonDelete"
+                >
+                  <span class="button__content" id="deleteBtn">Delete</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="button__container">
-          <button type="submit" class="button" id="buttonSubmit" onclick="saveData()">
-            <span class="button__content">Save</span>
+          <button type="reset" class="cancel__button" onclick="cancel()">
+            <span class="cancel__button__content">Cancel</span>
           </button>
-          <button type="reset" class="button" onclick="cancel()">
-            <span class="button__content">Cancel</span>
+          <button
+            type="submit"
+            class="button"
+            id="buttonSubmit"
+            onclick="saveData()"
+          >
+            <span class="button__content" id="saveBtn">Save</span>
           </button>
         </div>
       </div>

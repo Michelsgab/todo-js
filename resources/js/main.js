@@ -1,14 +1,17 @@
 let id = 1;
 let editId = null;
 let productArray = [];
+let modal = document.querySelector(".modal");
 let nameUser = document.getElementById("name");
 let emailUser = document.getElementById("email");
+let saveButton = document.getElementById("saveBtn");
 let errorName = document.getElementById("errorName");
 let errorEmail = document.getElementById("errorEmail");
-let errorProfession = document.getElementById("errorProfession");
-let saveButton = document.querySelector(".button__content");
+let deleteButton = document.getElementById("deleteBtn");
 let professionUser = document.getElementById("profession");
+let errorProfession = document.getElementById("errorProfession");
 let loadingButtonSubmit = document.getElementById("buttonSubmit");
+let loadingButtonDelete = document.getElementById("buttonDelete");
 
 function getData() {
   let data = {};
@@ -78,7 +81,7 @@ function listTable() {
   for (let i = 0; i < productArray.length; i++) {
     let tr = tbody.insertRow();
     tr.classList.add("center");
-    tr.classList.add()
+    tr.classList.add();
 
     let tdId = tr.insertCell();
     let tdNameUser = tr.insertCell();
@@ -114,7 +117,8 @@ function listTable() {
       "bx-sm",
       "iconCursor"
     );
-    iconRemove.setAttribute(
+    iconRemove.setAttribute("onclick", "showModal(" + productArray[i].id + ")");
+    deleteButton.setAttribute(
       "onclick",
       "deleteProduct(" + productArray[i].id + ")"
     );
@@ -147,8 +151,28 @@ function loadinButton() {
   }, 1500);
 }
 
+function showModal(id) {
+  const modal = document.querySelector(".modal");
+  let paragraph = document.querySelector(".modal__paragraph");
+
+  modal.style.display = "block";
+  paragraph.innerText = `Do you really want to delete ID ${id}?`;
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function loadingDeleteButton() {
+  loadingButtonDelete.classList.add("button__loading");
+  setTimeout(() => {
+    loadingButtonDelete.classList.remove("button__loading");
+    closeModal();
+  }, 1500);
+}
+
 function deleteProduct(id) {
-  if (confirm(`Do you really want to delete ID ${id}?`)) {
+  setTimeout(() => {
     let tbody = document.getElementById("tbody");
 
     for (let i = 0; i < productArray.length; i++) {
@@ -157,8 +181,8 @@ function deleteProduct(id) {
         tbody.deleteRow(i);
       }
     }
-    cancel();
-  }
+  }, 1500);
+  loadingDeleteButton();
 }
 
 function update(id, product) {
@@ -186,6 +210,7 @@ function cancel() {
   emailUser.value = "";
   professionUser.value = "";
 
+  deleteButton.innerText = "Delete";
   saveButton.innerText = "Save";
   editId = null;
 
