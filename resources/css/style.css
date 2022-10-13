@@ -77,12 +77,12 @@
 .button,
 .cancel__button,
 .delete__button {
+  position: relative;
   width: 6rem;
   border: none;
   height: 2.4rem;
   cursor: pointer;
   margin-left: 1rem;
-  position: relative;
   border-radius: 0.4rem;
   background-color: #123141;
   transition: ease-in-out 0.1s;
@@ -134,13 +134,13 @@
   bottom: 0;
   content: "";
   margin: auto;
-  display: flex;
   width: 0.8rem;
+  display: flex;
   height: 0.8rem;
-  border-radius: 50%;
   position: absolute;
-  border-top-color: #fff;
   border: 0.3rem solid transparent;
+  border-top-color: #fff;
+  border-radius: 50%;
   animation: loading__animation 1s ease-in-out infinite;
 }
 
@@ -231,9 +231,9 @@ tbody tr:nth-child(odd) {
 }
 
 .close:hover {
-  transform: scale(1.1);
   cursor: pointer;
   color: #0a2635;
+  transform: scale(1.1);
 }
 
 .modal__paragraph {
@@ -278,8 +278,8 @@ tbody tr:nth-child(odd) {
 
 .check {
   width: 35px;
-  color: #fff;
   height: 35px;
+  color: #fff;
   display: flex;
   font-size: 20px;
   border-radius: 50%;
