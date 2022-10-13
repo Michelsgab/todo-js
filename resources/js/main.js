@@ -1,6 +1,7 @@
 let id = 1;
 let editId = null;
 let productArray = [];
+let toast = document.querySelector(".toast");
 let modal = document.querySelector(".modal");
 let nameUser = document.getElementById("name");
 let emailUser = document.getElementById("email");
@@ -128,22 +129,32 @@ function listTable() {
   }
 }
 
+function handleToast() {
+  toast.classList.add("active");
+  setTimeout(() => {
+    toast.classList.remove("active");
+  }, 3500);
+}
+
 function saveData() {
   let product = getData();
 
   if (validateData(product)) {
     if (editId == null) {
       insertItem(product);
-      loadinButton();
+      loadingButton();
     } else {
       update(editId, product);
-      loadinButton();
+      loadingButton();
     }
+    setTimeout(() => {
+      handleToast();
+    }, 1400);
     cancel();
   }
 }
 
-function loadinButton() {
+function loadingButton() {
   loadingButtonSubmit.classList.add("button__loading");
   setTimeout(() => {
     loadingButtonSubmit.classList.remove("button__loading");
